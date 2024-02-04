@@ -1,13 +1,13 @@
-Data Flow:
-1. The data originates from **CoinCap** tool, providing real-time pricing and market activity for cryptocurrencies stock data.
-2. Python rest API is used to fetch data from website using token key.
-3. Data fetched in JSON data type and using python json transformed into pandas Dataframe
-4. Data transformation is done in python to make cleaner data.
-5. Data futher pushed into RDS(postgres- 16.1.1) locally using PGadmin.
-6. Postgres has powering tableau for data and dashboard was created in tableau.
+#Data Flow:
+1. The data originates from **CoinCap** tool, providing real-time pricing and market activity for **cryptocurrencies stock data**.
+2. **Python rest API** is used to fetch data from website using **token key**.
+3. Data fetched in **JSON data type** and using Python json transformed into **pandas Dataframe**.
+4. Data transformation is done in **Python** to make cleaner data.
+5. Data further pushed into **RDS (Postgres - 16.1.1)** locally using **PGadmin**.
+6. Postgres has powering **Tableau** for data and dashboard was created in **Tableau**.
 
-Data dict:
-Data model has been designed based on stock data output.
+**Data dict:**
+**Data model** has been designed based on stock data output.
 Total 3 table are pushed into postgres post transformation.
 Table name: stock_Assert(Contains information about top 100 stocks in market)
 column - id,rank,symbol,name,supply,maxsupply,marketcapusd,volumeusd24hr,priceusd,changepercent24hr,vwap24hr,explorer,timestamp.
