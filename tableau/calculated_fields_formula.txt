@@ -1,0 +1,11 @@
+stock_rank = """if [Rank]<=10 then 'top10'
+ELSEIF [Rank]<=20 then 'top20'
+else 'others'
+end"""
+
+stock_range="""
+if [Rateusd] <=1 then 'stock<1'
+ELSEIF [Rateusd] <=10 then 'stock<10'
+ELSEIF [Rateusd] <=1000 then 'stock<1000'
+else 'stock>1k'
+end"""
