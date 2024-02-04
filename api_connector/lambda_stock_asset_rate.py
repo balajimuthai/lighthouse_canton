@@ -7,10 +7,10 @@ from sqlalchemy import create_engine, text
 import psycopg2
 
 
-def rates():
+def rates(token):
   payload = {}
   headers = {
-  'Authorization': 'Bearer f73e3b35-57b8-47b5-ad43-d1dc1c85ff97'
+  'Authorization': f'Bearer {token}'
   }
   url = "http://api.coincap.io/v2/rates"
   response = requests.request("GET", url, headers=headers, data=payload)
@@ -44,7 +44,9 @@ def postgres_conn(rate_df1):
   conn.execute(sql)
   conn.close()
 def main():
-  rate_df=rates()
+  config=get_secret('secret_name')
+  token=config['token_key']
+  rate_df=rates(token)
   print('stock_rate generated')
   rate_df1=rate_transform(rate_df)
   print('stock data transformed')
